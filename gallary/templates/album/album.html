@@ -1,0 +1,30 @@
+{% extends "album/base.html" %}
+{% load static %}
+
+
+
+{% block content %}
+  <section class="py-5 text-center container">
+    <div class="row py-lg-5">
+      <div class="col-lg-6 col-md-8 mx-auto">
+        <h1 class="fw-bold h3">Blakkbrodie</h1>
+        
+      </div>
+    </div>
+  </section>
+
+  <div class="album  py-5 bg-light">
+    <div class="container">
+      <div class="row">
+        {% for art in album %}
+          <div class="col-lg-4">
+          <img src="{{ art.img.url}}" alt="" class="img-fluid"  width="100%" height="225px">
+          <h2>{{ art.name }}</h2>
+          <p>{{ art.description }}</p>
+          <p><a class="btn btn-secondary" href="#">View details »</a></p>
+        </div><!-- /.col-lg-4 -->
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+{% endblock content %}

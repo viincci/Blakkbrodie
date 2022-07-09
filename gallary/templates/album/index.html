@@ -1,0 +1,66 @@
+{% extends "album/base.html" %}
+{% load static %}
+
+
+
+{% block content %}
+  <section class="py-5 text-center container">
+    <div class="row py-lg-5">
+      <div class="col-lg-6 col-md-8 mx-auto">
+        <h1 class="fw-bold h3 "> <strong><u>Blakkbrodie</u></strong> </h1>
+      </div>
+    </div>
+  </section>
+
+  <div class="album  py-5 bg-dark text-white">
+    <div class="container">
+      <div class="row">
+        <p class="h2 my-3 dispaly-4 mb-5"><u>Albums</u></p>
+        {% for art in cat %}
+        
+          <div class="col-lg-4">
+          <img src="{{ art.img.url }}" alt="" class="img-fluid"  width="100%" height="225px">
+          <h2>{{ art.name }}</h2>
+          <p>{{ art.description }}</p>
+          <p><a class="btn btn-secondary" href="{% url 'album' art.id %}">View details »</a></p>
+        </div><!-- /.col-lg-4 -->
+        {% endfor %}
+        <hr class="my-5">
+        <p class="h2 my-3 dispaly-4 mb-5"><u>Drawings</u></p>
+        {% for art in draw %}
+        
+          <div class="col-lg-4">
+          <img src="{{ art.img.url }}" alt="" class="img-fluid"  width="100%" height="225px">
+          <h2>{{ art.name }}</h2>
+          <p>{{ art.description }}</p>
+          <p></p>
+        </div><!-- /.col-lg-4 -->
+        {% endfor %}
+        <hr class="my-5">
+        <p class="h2 my-3 dispaly-4 mb-5"><u>Paintings</u></p>
+        {% for art in paint %}
+        
+          <div class="col-lg-4">
+          <img src="{{ art.img.url }}" alt="" class="img-fluid"  width="100%" height="225px">
+          <h2>{{ art.name }}</h2>
+          <p>{{ art.description }}</p>
+          <p></p>
+        </div><!-- /.col-lg-4 -->
+        {% endfor %}
+        <hr class="my-5">
+        <p class="h2 my-3 dispaly-4 mb-5"><u>Comic</u></p>
+        {% for art in comic %}
+        
+          <div class="col-lg-4">
+          <img src="{{ art.img.url }}" alt="" class="img-fluid"  width="100%" height="225px">
+          <h2>{{ art.name }}</h2>
+          <p>{{ art.description }}</p>
+          <p></p>
+        </div><!-- /.col-lg-4 -->
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+{% endblock content %}
+
+
